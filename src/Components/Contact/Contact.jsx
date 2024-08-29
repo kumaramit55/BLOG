@@ -10,11 +10,11 @@ export default function Contact() {
         <a href="http://www.instagram.com/" target='_blank'>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAK5e1X8pyBNA6t1Zaf9GrxiTQ_IPQeyh19A&s" alt="" style={{width:50,height:50}}/></a>
 
-        <a href="http://www.whatsup.com"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUP2JjnLB9Y93thcaG3HKbXeXmGF5hkTaSPg&s" alt="" style={{width:50,height:50}}/></a>
+        <a href="http://www.whatsup.com"  target='_blank'><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUP2JjnLB9Y93thcaG3HKbXeXmGF5hkTaSPg&s" alt="" style={{width:50,height:50}}/></a>
 
         <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDyxU0K2Jex5or5LSATjWaNB8oSA6XPsWRRg&s" alt="" style={{width:50,height:50}}/></a>
 
-        <a href="https://github.com/kumaramit55"><img src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSueuOgdtMJqywAkqRjJ3tjuJVLU4-zrlg9lA&s" alt="" style={{width:50,height:50}}/>
+        <a href="https://github.com/kumaramit55" target='_blank'><img src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSueuOgdtMJqywAkqRjJ3tjuJVLU4-zrlg9lA&s" alt="" style={{width:50,height:50}}/>
         </a>
       </div>
 
