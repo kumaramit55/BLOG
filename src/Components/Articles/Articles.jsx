@@ -31,7 +31,7 @@ function Articles() {
       {
         blogs.map((items) => {
           return(
-            <div className='flex flex-col sm:flex-row sm:justify-between' key={items.fields.blogId} >
+            <div className='flex flex-col sm:flex-row sm:justify-between' key={items.fields.index} >
             <div className='w-full sm:w-1/2 h-auto '>
               <img src={items.fields.articleimage.fields.file.url} alt="" style={{width:400,height:400}} />
             </div>
