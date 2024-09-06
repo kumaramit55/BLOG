@@ -76,7 +76,7 @@ export default function Contact() {
 
     <div className='flex flex-col w-4/5  sm:w-1/2 mx-auto  border-b-2 border-slate-100 p-3'>
     <label htmlFor="" className='text-left text-xl font-mono font-semibold'>Message</label>
-    <textarea name="" id="" rows={4} cols={20} placeholder='Write Your Message Here' className='text-xl rounded-md p-1' onChange={(e)=>setMessage(e.target.value)}></textarea>
+    <textarea name="" id="" rows={4} cols={20} placeholder='Write Your Message Here' className='text-xl font-mono font-semibold rounded-md p-1' onChange={(e)=>setMessage(e.target.value)}></textarea>
    
     </div>
     <div className='text-xl mt-4'>

@@ -10,7 +10,7 @@ function Articles() {
     const fetchdata = async () => {
 
       try {
-        const entries = await client.getEntries()
+        const entries = await client.getEntries({content_type:'articels',limit:2})
         SetBlogs(entries.items)
         console.log(blogs)
         //  console.log(entries)
@@ -31,7 +31,7 @@ function Articles() {
       {
         blogs.map((items) => {
           return(
-            <div className='flex flex-col sm:flex-row sm:justify-between' key={items.fields.index} >
+            <div className='flex flex-col sm:flex-row sm:justify-between' key={items.fields.title} >
             <div className='w-full sm:w-1/2 h-auto '>
               <img src={items.fields.articleimage.fields.file.url} alt="" style={{width:400,height:400}} />
             </div>
@@ -54,6 +54,11 @@ function Articles() {
 
         })
       }
+
+      <div >
+        <button className='bg-blue-500 text-white  text-xl font-bold p-2 rounded-md mx-5 '>Previous</button>
+        <button className='bg-blue-500 text-white  text-xl font-bold p-2 rounded-md '>Next</button>
+      </div>
 
     </div>
 

@@ -6,92 +6,60 @@ import { Link } from 'react-router-dom';
 
 
 const options = {
-    renderText: (text) => {
-        return text.split('\n').reduce((children, textSegment, index) => {
-            return [...children, index > 0 && <br key={index} />, textSegment];
-        }, []);
-    },
-    renderMark: {
-        [MARKS.CODE]: (text) => {
-            return (
-                <pre>
-                    <code>{text}</code>
-                </pre>
-            );
-        },
-    },
-    rederMode: {
-        [BLOCKS.PARAGRAPH]: (node, children) => {
-            if (node.content.find((item) =>
-                item.marks?.find((mark) => mark.type == "code"))) {
-                return (
-                    <div>
-                        <pre>
-                            <code>{children}</code>
-                        </pre>
-                    </div>
-                )
-            }
-            return <p>{children}</p>
 
-
-        }
-
-    },
-    [INLINES.ENTRY_HYPERLINK]: (node) => {
-        if (node.data.target.sys.contentType.sys.id ==="post") {
-            return (
-                <Link href={`/posts/${node.data.target.fields.slug}`}>
-                    {node.data.target.fields.title}
-                </Link>
-            )
-
-        }
-    },
-    [INLINES.HYPERLINK]: (node) => {
-        const text = node.content.find((item) => item.nodeType ==="text")?.value;
-        <a href={node.data.url} target='_blank'>
-            {text}
-        </a>
-    },
-    [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-        if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
-            return (
-                <iframe src={node.data.target.fields.embedUrl}
-                    height={400}
-                    width="100%"
-                />
-            )
-        }
-
-    },
     renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-          return (
-             <img
-             src={`https:${node.data.target.fields.file.url}`}
-            height={node.data.target.fields.file.details.image.height}
-            width={node.data.target.fields.file.details.image.width}/>
-          )
+        [BLOCKS.HEADING_1]: (node, children) => (
+            <h1 className='text-4xl '>{children}</h1>
+        ),
+        [BLOCKS.HEADING_5]: (node, children) => (
+            <h5 className='text-xl  text-black font-mono'>{children}</h5>
+        ),
+        [BLOCKS.QUOTE]: (node, children) => (
+           <blockquote className='text-4xl font-bold text-green-500'>{children}</blockquote>
+        )
+        ,
+
+        [BLOCKS.PARAGRAPH]:(node,children)=>(
+            <p className='text-2xl font-sans text-justify'>{children}</p>
+        ),
+
+        [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
+            <img src={node.data.target.fields.file.url} alt="" />
+        ),
+
+        [INLINES.HYPERLINK]: (node, children) => (
+            <a
+                href={node.data.uri}
+                target="_blank"
+             className='text-blue-500 underline font-bold text-2xl hover:text-green-500'>{children}</a>
+        ),
+
+        [BLOCKS.UL_LIST]:(node, children) => (
+            <ul className=''>
+                {children}
+
+            </ul>
+        ),
+        [BLOCKS.LIST_ITEM]: (node, children) => (
+            <li className=''>{children}</li>
             
-         
-            
-        }
-      }
+        ),
+    }
+   
     
 }
-function RichText({content}) {
-    
-  return (
-  
+function RichText({ content }) {
+
+    return (
+
         <>
-        {
-            documentToReactComponents(content,options) 
-        }
+            {
+                documentToReactComponents(content, options)
+            }
         </>
-      
-    
-  )
+
+
+    )
 }
 
 export default RichText

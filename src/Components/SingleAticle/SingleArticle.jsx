@@ -13,7 +13,7 @@ function SingleArticle() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let entries = await client.getEntries()
+                let entries = await client.getEntries({content_type:'articels'})
                 let a = entries.items
                 console.log(a)
                 a.map((item) => {
