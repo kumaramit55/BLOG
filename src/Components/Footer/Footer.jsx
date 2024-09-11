@@ -37,7 +37,7 @@ function Footer() {
       <h1 className='text-3xl font-bold'>Follow my journey</h1>
       <p className='text-gray-600 text-xl w-11/12  sm:w-1/2 mx-auto my-3  '>Get notified about updates and be the first to get early access to the new, safer, and smarter way to archive your files.</p>
       <div className='p-2 '>
-        <input type="text" placeholder='Enter Your Email To Get Noitfy' 
+        <input type="email" placeholder='Enter Your Email To Get Noitfy' 
         className='p-2 text-xl w-3/5 sm:w-1/2 ' 
         onChange={(e)=>{
 

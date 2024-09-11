@@ -71,7 +71,7 @@ export default function Contact() {
 
     <div className='flex flex-col w-4/5 sm:w-1/2 mx-auto  border-b-2 border-slate-100 p-3'>
       <label htmlFor="" className='text-left text-xl font-mono font-semibold'>Email Adrress</label>
-      <input type="text" className='text-xl rounded-md py-2 px-1 font-medium'placeholder='jondoes@gmail.com' onChange={(e)=>setEmail(e.target.value)} />
+      <input type="email" className='text-xl rounded-md py-2 px-1 font-medium'placeholder='jondoes@gmail.com' onChange={(e)=>setEmail(e.target.value)} />
     </div>
 
     <div className='flex flex-col w-4/5  sm:w-1/2 mx-auto  border-b-2 border-slate-100 p-3'>
