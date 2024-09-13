@@ -10,7 +10,7 @@ function Articles() {
     const fetchdata = async () => {
 
       try {
-        const entries = await client.getEntries({content_type:'articels',limit:2})
+        const entries = await client.getEntries({content_type:'articels',limit:4})
         SetBlogs(entries.items)
         console.log(blogs)
         //  console.log(entries)
@@ -39,7 +39,7 @@ function Articles() {
              <h1  className="text-xl sm:text-2xl font-bold"> {items.fields.title}</h1>
               <h4 className='text-xl font-mono font-medium'>{items.fields.publishDate}</h4>
               <p className='text-justify texl-xl font-serif'>{items.fields.description.content[0].content[0].value}</p>
-              <NavLink to={`${items.fields.blogId}`}> <button className='text-white font-mono font-semibold bg-blue-600 p-2 rounded-md'>Read More</button>
+              <NavLink to={`Articles/${items.fields.blogId}`}> <button className='text-white font-mono font-semibold bg-blue-600 p-2 rounded-md'>Read More</button>
               </NavLink>
 
             </div>
@@ -55,10 +55,10 @@ function Articles() {
         })
       }
 
-      <div >
+      {/* <div >
         <button className='bg-blue-500 text-white  text-xl font-bold p-2 rounded-md mx-5 '>Previous</button>
         <button className='bg-blue-500 text-white  text-xl font-bold p-2 rounded-md '>Next</button>
-      </div>
+      </div> */}
 
     </div>
 
